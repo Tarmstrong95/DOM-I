@@ -60,3 +60,16 @@ nav.forEach((x, i)=> x.textContent = Object.values(siteContent.nav)[i]);
 document.querySelector('.cta-text h1').textContent = Object.values(siteContent.cta)[0];
 document.querySelector('.cta-text button').textContent = Object.values(siteContent.cta)[1];
 document.querySelector('#cta-img').src = Object.values(siteContent.cta)[2];
+
+// Main-content
+document.querySelector(".top-content:first-child .text-content h4").textContent = Object.values(siteContent["main-content"])[0];
+document.querySelector(".top-content:first-child .text-content p").textContent = Object.values(siteContent["main-content"])[1];
+document.querySelector(".top-content .text-content:nth-child(2) h4").textContent = Object.values(siteContent["main-content"])[2];
+document.querySelector(".top-content .text-content:nth-child(2) p").textContent = Object.values(siteContent["main-content"])[3];
+document.querySelector(".middle-img").src = Object.values(siteContent["main-content"])[4];
+document.querySelector(".bottom-content .text-content:nth-child(1) h4").textContent = Object.values(siteContent["main-content"])[5];
+document.querySelector(".bottom-content .text-content:nth-child(1) p").textContent = Object.values(siteContent["main-content"])[6];
+document.querySelector(".bottom-content .text-content:nth-child(2) h4").textContent = Object.values(siteContent["main-content"])[7];
+document.querySelector(".bottom-content .text-content:nth-child(2) p").textContent = Object.values(siteContent["main-content"])[8];
+document.querySelector(".bottom-content .text-content:nth-child(3) h4").textContent = Object.values(siteContent["main-content"])[9];
+document.querySelector(".bottom-content .text-content:nth-child(3) p").textContent = Object.values(siteContent["main-content"])[10];
