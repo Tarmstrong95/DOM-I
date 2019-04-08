@@ -56,3 +56,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let nav = document.querySelectorAll('.container nav a');
 nav.forEach((x, i)=> x.textContent = Object.values(siteContent.nav)[i]);
 
+// Cta section 
+document.querySelector('.cta-text h1').textContent = Object.values(siteContent.cta)[0];
+document.querySelector('.cta-text button').textContent = Object.values(siteContent.cta)[1];
+document.querySelector('#cta-img').src = Object.values(siteContent.cta)[2];
