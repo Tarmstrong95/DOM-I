@@ -79,3 +79,6 @@ document.querySelector('.contact h4').textContent = Object.values(siteContent.co
 
 var contactPs = document.querySelectorAll('.contact p');
 contactPs.forEach((x, i) => x.textContent = Object.values(siteContent.contact)[i+1])
+
+// Footer 
+document.querySelector('footer p').textContent = Object.values(siteContent.footer)[0];
