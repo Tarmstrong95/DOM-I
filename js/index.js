@@ -54,7 +54,20 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let nav = document.querySelectorAll('.container nav a');
-nav.forEach((x, i)=> x.textContent = Object.values(siteContent.nav)[i]);
+nav.forEach((x, i)=> {
+  x.textContent = Object.values(siteContent.nav)[i];
+  x.style.color = "green";
+});
+var newNavEl = document.createElement("a"), 
+newNavElTwo = document.createElement("a"),
+ navText = "new-nav",
+ navItem = document.querySelector('nav');
+
+newNavEl.textContent = navText;
+newNavElTwo.textContent = navText;
+navItem.prepend(newNavElTwo);
+navItem.appendChild(newNavEl);
+
 
 // Cta section 
 document.querySelector('.cta-text h1').textContent = Object.values(siteContent.cta)[0];
@@ -82,3 +95,24 @@ contactPs.forEach((x, i) => x.textContent = Object.values(siteContent.contact)[i
 
 // Footer 
 document.querySelector('footer p').textContent = Object.values(siteContent.footer)[0];
+
+//button maker function
+const addButton = (function(){
+  // Button creation
+  var button = document.createElement("button"), btn = button.style;
+  button.textContent = "Press to Delete page!"
+  document.querySelector("body").appendChild(button);
+  btn.position = "fixed";
+  btn.background = "rgb(200, 20, 50)";
+  btn.fontWeight = "900";
+  btn.borderRadius = "10px";
+  btn.bottom = "2px";
+  btn.left = "2px";
+  btn.padding = "10px 20px";
+  
+  const pageDestroy = function(){
+    alert("You're about to destroy the page!");
+    document.querySelector('.container').style.display = "none";
+  }
+  button.addEventListener("click", pageDestroy);
+})();
