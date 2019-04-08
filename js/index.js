@@ -73,3 +73,9 @@ document.querySelector(".bottom-content .text-content:nth-child(2) h4").textCont
 document.querySelector(".bottom-content .text-content:nth-child(2) p").textContent = Object.values(siteContent["main-content"])[8];
 document.querySelector(".bottom-content .text-content:nth-child(3) h4").textContent = Object.values(siteContent["main-content"])[9];
 document.querySelector(".bottom-content .text-content:nth-child(3) p").textContent = Object.values(siteContent["main-content"])[10];
+
+// Contact
+document.querySelector('.contact h4').textContent = Object.values(siteContent.contact)[0];
+
+var contactPs = document.querySelectorAll('.contact p');
+contactPs.forEach((x, i) => x.textContent = Object.values(siteContent.contact)[i+1])
