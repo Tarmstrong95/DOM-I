@@ -103,12 +103,13 @@ const addButton = (function(){
   button.textContent = "Press to Delete page!"
   document.querySelector("body").appendChild(button);
   btn.position = "fixed";
-  btn.background = "rgb(200, 20, 50)";
+  btn.background = "#ff665e";
   btn.fontWeight = "900";
   btn.borderRadius = "10px";
   btn.bottom = "2px";
   btn.left = "2px";
   btn.padding = "10px 20px";
+  btn.cursor = "pointer";
   
   const pageDestroy = function(){
     alert("You're about to destroy the page!");
