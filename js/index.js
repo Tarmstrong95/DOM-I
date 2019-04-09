@@ -49,7 +49,7 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 
-// Nav
+// Nav =========================
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
@@ -67,38 +67,47 @@ newNavEl.textContent = navText;
 newNavElTwo.textContent = navText;
 navItem.prepend(newNavElTwo);
 navItem.appendChild(newNavEl);
+// End Nav ==============
 
+// Text content setter function
+const txtStr = (query, obj, index) => {
+  document.querySelector(query).textContent = Object.values(obj)[index];
+}
+// Text content setter variables
+let sCta = siteContent.cta;
+let sMc = siteContent["main-content"];
+let sCntc = siteContent.contact;
+let sFot = siteContent.footer;
 
 // Cta section 
-document.querySelector('.cta-text h1').textContent = Object.values(siteContent.cta)[0];
-document.querySelector('.cta-text button').textContent = Object.values(siteContent.cta)[1];
+txtStr(".cta-text h1", sCta, 0)
+txtStr('.cta-text button', sCta, 1)
 document.querySelector('#cta-img').src = Object.values(siteContent.cta)[2];
 
 // Main-content
-document.querySelector(".top-content:first-child .text-content h4").textContent = Object.values(siteContent["main-content"])[0];
-document.querySelector(".top-content:first-child .text-content p").textContent = Object.values(siteContent["main-content"])[1];
-document.querySelector(".top-content .text-content:nth-child(2) h4").textContent = Object.values(siteContent["main-content"])[2];
-document.querySelector(".top-content .text-content:nth-child(2) p").textContent = Object.values(siteContent["main-content"])[3];
+txtStr(".top-content:first-child .text-content h4", sMc, 0)
+txtStr(".top-content:first-child .text-content p", sMc, 1)
+txtStr(".top-content .text-content:nth-child(2) h4", sMc, 2)
+txtStr(".top-content .text-content:nth-child(2) p", sMc, 3)
+txtStr(".bottom-content .text-content:nth-child(1) h4", sMc, 5)
+txtStr(".bottom-content .text-content:nth-child(1) p", sMc, 6)
+txtStr(".bottom-content .text-content:nth-child(2) h4", sMc, 7)
+txtStr(".bottom-content .text-content:nth-child(2) p", sMc, 8)
+txtStr(".bottom-content .text-content:nth-child(3) h4", sMc, 9)
+txtStr(".bottom-content .text-content:nth-child(3) p", sMc, 10)
 document.querySelector(".middle-img").src = Object.values(siteContent["main-content"])[4];
-document.querySelector(".bottom-content .text-content:nth-child(1) h4").textContent = Object.values(siteContent["main-content"])[5];
-document.querySelector(".bottom-content .text-content:nth-child(1) p").textContent = Object.values(siteContent["main-content"])[6];
-document.querySelector(".bottom-content .text-content:nth-child(2) h4").textContent = Object.values(siteContent["main-content"])[7];
-document.querySelector(".bottom-content .text-content:nth-child(2) p").textContent = Object.values(siteContent["main-content"])[8];
-document.querySelector(".bottom-content .text-content:nth-child(3) h4").textContent = Object.values(siteContent["main-content"])[9];
-document.querySelector(".bottom-content .text-content:nth-child(3) p").textContent = Object.values(siteContent["main-content"])[10];
 
 // Contact
-document.querySelector('.contact h4').textContent = Object.values(siteContent.contact)[0];
-
+txtStr('.contact h4', sCntc, 0)
 var contactPs = document.querySelectorAll('.contact p');
 contactPs.forEach((x, i) => x.textContent = Object.values(siteContent.contact)[i+1])
 
 // Footer 
-document.querySelector('footer p').textContent = Object.values(siteContent.footer)[0];
+txtStr('footer p', sFot, 0)
 
-//button maker function
+//button maker IIFE
 const addButton = (function(){
-  // Button creation
+  // Button creation & style
   var button = document.createElement("button"), btn = button.style;
   button.textContent = "Press to Delete page!"
   document.querySelector("body").appendChild(button);
